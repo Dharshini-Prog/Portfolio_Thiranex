@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me | Accessible Portfolio Website</title>
+    <meta name="description" content="Get in touch for collaborations, project opportunities, or inquiries using our fully accessible and secure contact form.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourdomain.com/contact.html">
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header role="banner">
+        <div class="logo">DHARSHINI.S.S</div>
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+    </nav>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+        
+        <section aria-labelledby="contact-heading">
+            <h1 id="contact-heading">Get in Touch</h1>
+            <p>Please use the form below to drop a message. All fields marked with an asterisk (<span aria-hidden="true">*</span>) are mandatory.</p>
+
+            <form action="#" method="POST" class="contact-form">
+                
+                <div class="form-group">
+                    <label id="name-label" for="user-name">Full Name <span class="required" aria-hidden="true">*</span></label>
+                    <input type="text" id="user-name" name="name" required aria-required="true" aria-labelledby="name-label" placeholder="e.g. Jane Doe">
+                </div>
+
+                <div class="form-group">
+                    <label id="email-label" for="user-email">Email Address <span class="required" aria-hidden="true">*</span></label>
+                    <input type="email" id="user-email" name="email" required aria-required="true" aria-labelledby="email-label" placeholder="name@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label id="message-label" for="user-message">Your Message <span class="required" aria-hidden="true">*</span></label>
+                    <textarea id="user-message" name="message" rows="6" required aria-required="true" aria-labelledby="message-label" placeholder="Write your message here..."></textarea>
+                </div>
+
+                <button type="submit" aria-label="Submit the contact form">Send Message</button>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2026 DHARSHINI.S.S. All rights reserved. Built with strict accessibility standards.</p>
+    </footer>
+
+</body>
+</html>
