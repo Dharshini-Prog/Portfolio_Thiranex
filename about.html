@@ -19,6 +19,7 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
+        <button id="theme-btn">🌙 Dark Mode</button>
     </header>
 
     <main id="main-content" tabindex="-1">
@@ -35,13 +36,13 @@
             <p>Here is a quick overview of my current academic focus and domain interests:</p>
             
             <dl class="profile-details">
-                <p id="title">Current Education :</p>
+                <p class="title">Current Education :</p>
                 <dd>Bachelor of Technology in Information Technology</dd>
 
-                <p id="title">Core Technical Focus :</p>
+                <p class="title">Core Technical Focus :</p>
                 <dd>AI fundamentals, Cloud Computing, Software Engineering, Semantic HTML5, and Low-Power Hardware Logic</dd>
 
-                <p id="title">Current Objective :</p>
+                <p class="title">Current Objective :</p>
                 <dd>Securing an impactful IT Internship to bridge theory with practical deployment</dd>
             </dl>
         </section>
@@ -67,6 +68,33 @@
     <footer role="contentinfo">
         <p>&copy; 2026 DHARSHINI.S.S. All rights reserved. Built with strict accessibility standards.</p>
     </footer>
+    
+<script>
+const themeBtn = document.getElementById("theme-btn");
+
+/* Load saved theme */
+if(localStorage.getItem("theme") === "dark"){
+    document.body.classList.add("dark");
+    themeBtn.textContent = "☀️ Light Mode";
+}
+
+/* Toggle theme */
+if(themeBtn){
+    themeBtn.addEventListener("click", () => {
+
+        document.body.classList.toggle("dark");
+
+        if(document.body.classList.contains("dark")){
+            localStorage.setItem("theme", "dark");
+            themeBtn.textContent = "☀️ Light Mode";
+        }else{
+            localStorage.setItem("theme", "light");
+            themeBtn.textContent = "🌙 Dark Mode";
+        }
+
+    });
+}
+</script>
 
 </body>
 </html>
