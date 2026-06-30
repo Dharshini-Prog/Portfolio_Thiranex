@@ -14,25 +14,79 @@ import "./styles/main.css";
 
 function App() {
   const [cart, setCart] = useState([]);
+
+  // Add item to cart
   const addToCart = (food) => {
-  setCart([...cart, food]);
-};
+    const existingItem = cart.find((item) => item.id === food.id);
+
+    if (existingItem) {
+      setCart(
+        cart.map((item) =>
+          item.id === food.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        )
+      );
+    } else {
+      setCart([...cart, { ...food, quantity: 1 }]);
+    }
+  };
+
+  // Increase quantity
+  const increaseQuantity = (id) => {
+    setCart(
+      cart.map((item) =>
+        item.id === id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      )
+    );
+  };
+
+  // Decrease quantity
+  const decreaseQuantity = (id) => {
+    setCart(
+      cart
+        .map((item) =>
+          item.id === id
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+        .filter((item) => item.quantity > 0)
+    );
+  };
+
+  // Remove item completely
+  const removeItem = (id) => {
+    setCart(cart.filter((item) => item.id !== id));
+  };
+
   return (
     <BrowserRouter>
       <Navbar cartCount={cart.length} />
 
       <Routes>
         <Route path="/" element={<Home />} />
+
         <Route
           path="/menu"
           element={<Menu addToCart={addToCart} />}
         />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+
         <Route
           path="/cart"
-          element={<Cart cart={cart} />}
+          element={
+            <Cart
+              cart={cart}
+              increaseQuantity={increaseQuantity}
+              decreaseQuantity={decreaseQuantity}
+              removeItem={removeItem}
+            />
+          }
         />
+
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
 
       <Footer />
