@@ -1,7 +1,16 @@
+import FoodCard from "../components/FoodCard";
+import foodItems from "../data/food";
+
 function Menu() {
   return (
-    <div style={{ padding: "40px" }}>
-      <h1>Menu</h1>
+    <div className="menu-page">
+      <h1>Our Menu</h1>
+
+      <div className="food-grid">
+        {foodItems.map((food) => (
+          <FoodCard key={food.id} food={food} />
+        ))}
+      </div>
     </div>
   );
 }
