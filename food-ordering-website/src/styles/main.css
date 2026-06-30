@@ -345,3 +345,75 @@ body{
 .remove-btn:hover{
     background:#b02a37;
 }
+
+/* About & Contact */
+
+.page-container{
+    padding:60px;
+    text-align:center;
+    background:#f8f9fa;
+    min-height:80vh;
+}
+
+.page-container h1{
+    margin-bottom:30px;
+    color:#ff6b35;
+}
+
+.info-card{
+    max-width:800px;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+    text-align:left;
+}
+
+.info-card h2{
+    margin-top:20px;
+    color:#ff6b35;
+}
+
+.info-card p{
+    margin:15px 0;
+    line-height:1.8;
+}
+
+.info-card ul{
+    margin-top:15px;
+    padding-left:20px;
+}
+
+.info-card li{
+    margin:10px 0;
+}
+
+.contact-form{
+    margin-top:25px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:16px;
+}
+
+.contact-form button{
+    background:#ff6b35;
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.contact-form button:hover{
+    background:#e85a28;
+}
