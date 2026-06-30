@@ -1,16 +1,20 @@
 import { Link } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ cartCount }) {
   return (
     <nav className="navbar">
-      <h2 className="logo">FoodieHub</h2>
+      <h2 className="logo">🍔 FoodieHub</h2>
 
       <ul className="nav-links">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/menu">Menu</Link></li>
         <li><Link to="/about">About</Link></li>
         <li><Link to="/contact">Contact</Link></li>
-        <li><Link to="/cart">🛒 Cart</Link></li>
+        <li>
+          <Link to="/cart">
+            🛒 Cart ({cartCount})
+          </Link>
+        </li>
       </ul>
     </nav>
   );

@@ -1,4 +1,4 @@
-function FoodCard({ food }) {
+function FoodCard({ food, addToCart }) {
   return (
     <div className="food-card">
       <img src={food.image} alt={food.name} />
@@ -7,7 +7,9 @@ function FoodCard({ food }) {
 
       <p className="price">₹{food.price}</p>
 
-      <button>Add to Cart</button>
+      <button onClick={() => addToCart(food)}>
+        Add to Cart
+      </button>
     </div>
   );
 }
